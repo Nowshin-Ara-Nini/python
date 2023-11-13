@@ -16,17 +16,17 @@ def game(user ,computer ):
        print(f"Both players selected {user}. It's a tie!")
     elif user == "rock":
        if computer == "scissors":
-        print("Rock smashes scissors! You win!")
+        print("Rock smashes scissors! You win!yaay")
        else:
         print("Paper covers rock! You lose.")
     elif user == "paper":
       if computer == "rock":
-        print("Paper covers rock! You win!")
+        print("Paper covers rock! You win!yaay")
       else:
         print("Scissors cuts paper! You lose.")
     elif user == "scissors":
       if computer == "paper":
-        print("Scissors cuts paper! You win!")
+        print("Scissors cuts paper! You win!yaay")
       else:
         print("Rock smashes scissors! You lose.")
     
