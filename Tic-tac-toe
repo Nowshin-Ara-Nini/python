@@ -1,1 +1,88 @@
+value=[1,2,3,4,5,6,7,8,9]
+inpvalue=[]
+def playgame():
 
+    chance=0
+    player="x"
+    while True:
+    #  if checkwinner()== True:
+    #    print("x win")
+    #    break
+    #  elif checkwinner()==False:
+    #    print("o win")
+    #    break
+
+     if chance%2==0:
+
+       print("o turn")
+
+       inp=int(input("enter: "))
+       if inp in inpvalue:
+            x=tryagain()
+            chance+=1
+            inpvalue.append(x)
+            value[x-1]="o"
+
+       else:
+            chance+=1
+            inpvalue.append(inp)
+            value[inp-1]="o"
+
+     elif chance%2==1:
+        print("x turn")
+        inp=int(input("enter: "))
+        if inp in inpvalue:
+            x=tryagain()
+            chance+=1
+            inpvalue.append(x)
+            value[x-1]="x"
+
+        else:
+            chance+=1
+            inpvalue.append(inp)
+            value[inp-1]="x"
+
+     if chance ==9:
+        break
+    #print(value)
+     printboard()
+
+    #  print(f" {value[0]} / {value[1]} /{value[2]}")
+    #  print(f"----------------------------------")
+    #  print(f" {value[3]} / {value[4]} /{value[5]}")
+    #  print(f"----------------------------------")
+    #  print(f" {value[6]} / {value[7]} /{value[8]}")
+
+def tryagain():
+    while True:
+        ab=int(input("enter again: "))
+        if ab not in inpvalue:
+            return ab
+def checkwinner():
+   if (value[0:3]==["x","x","x"] or value[3:6]==["x","x","x"] or value[6:9]==["x","x","x"] or value[0:7:3]==["x","x","x"] or value[1:8:3]==["x","x","x"]  or value[2:9:3]==["x","x","x"] or value[0:9:4]==["x","x","x"] or value[2:7:2]==["x","x","x"]) and (value[0:3]==["o","o","o"] or value[3:6]==["o","o","o"] or value[6:9]==["o","o","o"] or value[0:7:3]==["o","o","o"] or value[1:8:3]==["o","o","o"]  or value[2:9:3]==["o","o","o"] or value[0:9:4]==["o","o","o"] or value[2:7:2]==["o","o","o"]):
+     return None
+   elif value[0:3]==["x","x","x"] or value[3:6]==["x","x","x"] or value[6:9]==["x","x","x"] or value[0:7:3]==["x","x","x"] or value[1:8:3]==["x","x","x"]  or value[2:9:3]==["x","x","x"] or value[0:9:4]==["x","x","x"] or value[2:7:2]==["x","x","x"]:
+
+      return True
+   elif value[0:3]==["o","o","o"] or value[3:6]==["o","o","o"] or value[6:9]==["o","o","o"] or value[0:7:3]==["o","o","o"] or value[1:8:3]==["o","o","o"]  or value[2:9:3]==["o","o","o"] or value[0:9:4]==["o","o","o"] or value[2:7:2]==["o","o","o"]:
+
+       return False
+
+#checkwinner()()
+
+def playgame2():
+    if checkwinner()== True:
+       print("x win")
+    elif checkwinner()==None:
+        print("game draw")
+    else:
+        print("o win")
+def printboard():
+
+     print(f" {value[0]} / {value[1]} /{value[2]}")
+     print(f"----------------------------------")
+     print(f" {value[3]} / {value[4]} /{value[5]}")
+     print(f"----------------------------------")
+     print(f" {value[6]} / {value[7]} /{value[8]}")
+playgame()
+playgame2()
