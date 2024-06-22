@@ -45,7 +45,7 @@ def playgame():
      if chance ==9:
         break
     #print(value)
-     printboard()
+     #printboard()
 
     #  print(f" {value[0]} / {value[1]} /{value[2]}")
     #  print(f"----------------------------------")
@@ -71,6 +71,7 @@ def checkwinner():
 #checkwinner()()
 
 def playgame2():
+    printboard()
     if checkwinner()== True:
        print("x win")
     elif checkwinner()==None:
